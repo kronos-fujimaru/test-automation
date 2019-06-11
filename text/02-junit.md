@@ -65,7 +65,22 @@ public class CalculatorTest {
 
 - CalculatorTestクラスの内容を上記のように編集する
 
-> **assertThat ( テスト対象の値（メソッドなど） , 期待値（isなどの検証メソッドを使用） )**
+> **assertThat ( テスト対象の値（メソッドなど） , 期待値（isなどの検証メソッドを使用） )**<br>検証メソッドは isメソッドの他に以下のようなメソッドがあります。
+
+| メソッド名 | 内容 |
+|:----------:|-----|
+| is, equalTo | 同値である |
+| not | 同値でない |
+| nullValue | nullである |
+| notNullValue | nullでない |
+| instanceOf | 指定したクラスのインスタンスである |
+| containsString | 指定した文字列が含まれる |
+| isEmptyOrNullString | 空文字またはnullである |
+| greaterThan | 指定した値より大きい |
+| greaterThanOrEqualTo | 指定した値以上である |
+| lessThan | 指定した値より小さい |
+| lessThanOrEqualTo | 指定した値以下である |
+
 
 <br>
 
