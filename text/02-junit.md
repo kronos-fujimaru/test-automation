@@ -28,20 +28,20 @@ public class Calculator {
 
 ### 2-1. テストコードを作成する
 
-<img src="../img/01-11.png" width="1000">
+<img src="../img/02-01.png" width="1000">
 
 - プロジェクトを右クリック > New > Other...
 
 <br>
 
-<img src="../img/01-12.png" width="600">
+<img src="../img/02-02.png" width="600">
 
 - Java > JUnit > **JUnit Test Case** を選択する
 - [Next]ボタンをクリックする
 
 <br>
 
-<img src="../img/01-13.png" width="600">
+<img src="../img/02-03.png" width="600">
 
 - クラス名を **CalculatorTest** とする
 - [Finish]ボタンをクリックする
@@ -86,19 +86,19 @@ public class CalculatorTest {
 
 ### 2-2. テストを実行する
 
-<img src="../img/01-14.png" width="1000">
+<img src="../img/02-04.png" width="1000">
 
 - Eclipseの実行ボタン > Run As > JUnit Test
 
 <br>
 
-<img src="../img/01-15.png" width="900">
+<img src="../img/02-05.png" width="900">
 
 > JUnitタブが表示され、テストの実行結果が表示されます。<br>今回の場合、calcメソッドの結果と期待値が一致するため正常終了しています（エラーは表示されません）。
 
 <br>
 
-<img src="../img/01-16.png" width="900">
+<img src="../img/02-06.png" width="900">
 
 > calcメソッドの結果と期待値が一致しない場合、エラーとして表示されます。
 
