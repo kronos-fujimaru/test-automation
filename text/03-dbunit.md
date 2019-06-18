@@ -161,7 +161,7 @@ public class FruitsDto {
 
 <img src="../img/03-03.png" width="650">
 
-- JUnitテストケースを作成する<br>**Package**: jp.shop.dao<br>**Name**: FruitsDAOTest<br>
+- JUnitテストケースを作成する<br>**Source folder**: src/test/java<br>**Package**: jp.shop.dao<br>**Name**: FruitsDAOTest<br>
 - テストコードを記述する（下記コード参照）
 
 ```java
