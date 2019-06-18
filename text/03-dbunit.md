@@ -317,3 +317,7 @@ public class FruitsDAOTest {
 [JUnit Test]を実行すると、テスト結果が **JUnit**タブに表示されます。
 
 > 期待と異なる結果となった場合は差異の情報が表示されます。<br>下記画像の場合、期待する金額（price）が「400」に対して実際の金額は「800」となります。<br><img src="../img/03-06.png" width="1000">
+
+<br>
+
+<a href="../README.md">>> メニューへ</a>
