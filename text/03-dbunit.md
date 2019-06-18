@@ -229,8 +229,8 @@ public class FruitsDAOTest {
         int expectedRowCount = 3;
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            FruitsDAO dao = new FruitsDAO(conn);
-            List<FruitsDto> actual = dao.findAll();
+            FruitsDAO sut = new FruitsDAO(conn);
+            List<FruitsDto> actual = sut.findAll();
 
             // 取得件数の検証
             assertThat(actual.size(), is(expectedRowCount));
@@ -294,9 +294,9 @@ public class FruitsDAOTest {
             FruitsDto fruit = new FruitsDto();
             fruit.setId(4);
             fruit.setName("Dragon Fruits");
-            fruit.setPrice(800);
-            FruitsDAO dao = new FruitsDAO(conn);
-            dao.create(fruit);
+            fruit.setPrice(400);
+            FruitsDAO sut = new FruitsDAO(conn);
+            sut.create(fruit);
 
             // DBからfruitsテーブルのデータを取得する
             IDataSet databaseDataSet = dbConn.createDataSet();
