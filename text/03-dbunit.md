@@ -176,11 +176,14 @@ import java.sql.DriverManager;
 import java.util.List;
 
 import org.dbunit.Assertion;
+import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+import org.dbunit.ext.mysql.MySqlDataTypeFactory;
+import org.dbunit.ext.mysql.MySqlMetadataHandler;
 import org.dbunit.operation.DatabaseOperation;
 import org.junit.Before;
 import org.junit.Test;
@@ -192,6 +195,7 @@ public class FruitsDAOTest {
     private static final String DB_URL = "jdbc:mysql://localhost/fruits_shop?useSSL=false&serverTimezone=JST";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "mysql";
+    private static final String DB_SCHEMA = "fruits_shop";
 
     /**
      * 前処理
@@ -204,7 +208,9 @@ public class FruitsDAOTest {
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
 
             // DB接続情報をIDatabaseConnectionでラップする
-            dbConn = new DatabaseConnection(conn);
+            dbConn = new DatabaseConnection(conn, DB_SCHEMA);
+            dbConn.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new MySqlDataTypeFactory());
+            dbConn.getConfig().setProperty(DatabaseConfig.PROPERTY_METADATA_HANDLER, new MySqlMetadataHandler());
 
             // XMLに定義している情報をデータセットとして取得する
             IDataSet dataset = new FlatXmlDataSetBuilder().build(
@@ -281,7 +287,9 @@ public class FruitsDAOTest {
         IDatabaseConnection dbConn = null;
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            dbConn = new DatabaseConnection(conn);
+            dbConn = new DatabaseConnection(conn, DB_SCHEMA);
+            dbConn.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new MySqlDataTypeFactory());
+            dbConn.getConfig().setProperty(DatabaseConfig.PROPERTY_METADATA_HANDLER, new MySqlMetadataHandler());
 
             // XMLに定義している情報をデータセットとして取得する
             IDataSet dataset = new FlatXmlDataSetBuilder().build(
