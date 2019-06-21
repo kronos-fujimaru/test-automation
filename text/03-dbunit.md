@@ -192,10 +192,10 @@ import jp.shop.dto.FruitsDto;
 
 public class FruitsDAOTest {
 
-    private static final String DB_URL = "jdbc:mysql://localhost/fruits_shop?useSSL=false&serverTimezone=JST";
+    private static final String DB_SCHEMA = "fruits_shop";
+    private static final String DB_URL = "jdbc:mysql://localhost/" + DB_SCHEMA + "?useSSL=false&serverTimezone=JST";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "mysql";
-    private static final String DB_SCHEMA = "fruits_shop";
 
     /**
      * 前処理
