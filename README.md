@@ -12,4 +12,4 @@
 
 <a href="/text/05-selenide.md">05. Selenide</a>
 
-<a href="/text/06-jenkins.md">06. Jenkins</a>
+<a href="/text/06-jenkins.md">06. CIとJenkins</a>
